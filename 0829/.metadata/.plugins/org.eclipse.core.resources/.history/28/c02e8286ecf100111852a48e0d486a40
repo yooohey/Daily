@@ -1,0 +1,11 @@
+package sample1_2;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		int i;
+		Calc[] calc = new Calc[3];
+		calc[0] = new SubCalc1();
+	}
+
+}
