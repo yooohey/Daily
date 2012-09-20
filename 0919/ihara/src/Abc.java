@@ -1,0 +1,14 @@
+public class Abc {
+
+
+	void Hikiwatasi(int n, boolean[] isprime, int i) {
+		int k;
+		// エラトステネスのふるい
+		for (k = 2; k * k < n; k++) {
+			// 素数の2倍から順に「消して」いく。
+			if (isprime[k])
+				for (i = k * 2; i < n; i += k)
+					isprime[i] = false;
+		}
+	}
+}

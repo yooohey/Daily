@@ -1,0 +1,29 @@
+public class Jissyu35 {
+	public static void main(String[] args) {
+		// 0 から n-1 までの整数について求める
+		int n1 = 1000;
+		int n2 = 1000;
+		//long n = 100000000000L;
+		// 素数ならば true になる真偽変数の配列を用意する
+		boolean[][] isprime = new boolean[n1][n2];
+		int i,i2;
+		// 初期化する(0, 1 を除く全ての自然数を素数と仮定する
+		isprime[0][0] = false;
+		isprime[0][1] = false;
+		for (i = 0; i < n1; i++){
+			for(i2 = 2; i2 < n2; i2++){
+				isprime[i][i2] = true;
+			}
+		}
+
+		Abc Sousin = new Abc();
+		Sousin.Hikiwatasi(n1, n2, isprime, i);
+		// 素数のみ表示する
+		for (i = 2; i < n1; i++){
+			for(i2 = 0; i2 < n2; i2++){
+			if (isprime[i][i2])
+				System.out.printf("%d, ", i2);
+			}
+		}
+	}
+}
